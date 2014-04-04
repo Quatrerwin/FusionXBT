@@ -6,8 +6,8 @@ front-end for the XBT Tracker and is in no way affliated with Olaf van der Spek 
 
 Installation
 ------------
--This project uses Laravel. install dependencies with [Composer](https://getcomposer.org/).
--The database needs to be set up. If using MySQL, create a file .env.php or .env.environment.php where environment is your working environment (e.g., development) in the root directory with contents
+- This project uses Laravel. install dependencies with [Composer](https://getcomposer.org/).
+- The database needs to be set up. If using MySQL, create a file .env.php or .env.environment.php where environment is your working environment (e.g., development) in the root directory with contents
 
 ```php
 <?php
