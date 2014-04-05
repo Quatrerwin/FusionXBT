@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::resource('torrents', 'TorrentsController');
+	
+Route::get('/', 'TorrentsController@index');
