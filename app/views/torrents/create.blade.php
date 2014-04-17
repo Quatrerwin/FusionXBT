@@ -11,6 +11,12 @@
 		</div>
 
 		<div class="field">
+			{{ Form::label('description', 'Description:') }}
+			{{ Form::text('description') }}
+			{{ $errors->first('description', '<span class="error">:message</span>') }}
+		</div>
+
+		<div class="field">
 			{{ Form::label('torrent', 'Torrent:') }}
 			{{ Form::file('torrent') }}
 			{{ $errors->first('torrent', '<span class="error">:message</span>') }}

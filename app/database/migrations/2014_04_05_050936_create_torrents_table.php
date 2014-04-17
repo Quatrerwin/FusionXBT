@@ -15,6 +15,7 @@ class CreateTorrentsTable extends Migration {
 		Schema::create('torrents', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('name');
+			$table->string('description');
 			$table->string('filename');
 			$table->bigInteger('size')->default(0);
 			$table->integer('hits')->unsigned()->default(0);

@@ -16,7 +16,9 @@ class TorrentsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('torrents.index');
+		$torrents = Torrent::paginate(10);
+
+		return View::make('torrents.index', ['torrents' => $torrents]);
 	}
 
 	/**
@@ -37,18 +39,29 @@ class TorrentsController extends \BaseController {
 	public function store()
 	{
 		$torrent = new Torrent();
+		
+		if (Input::hasFile('torrent'))
+		{
+			$file = Input::file('torrent');
+
+			$torrent->filename = $file->getClientOriginalName();
+			$torrent->size = $file->getSize();
+		}
 
 		$torrent->name = Input::get('name');
 		$torrent->visible = 'yes';
-		if (Input::hasFile('torrent'))
-		{
-			$torrent->filename = Input::file('torrent')->getClientOriginalName();
-			$torrent->size = Input::file('torrent')->getSize();
-		}
 
 		if ( ! $torrent->save() )
 		{
 			return Redirect::back()->withInput()->withErrors($torrent->getErrors());
+		}
+
+		if (Input::hasFile('torrent'))
+		{
+			$file = Input::file('torrent');
+
+			$file->move(public_path() . '/files',  $torrent->id . "." . $file->getClientOriginalExtension());
+
 		}
 
 		return Redirect::route('torrents.index');
