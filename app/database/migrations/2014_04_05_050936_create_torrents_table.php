@@ -16,11 +16,10 @@ class CreateTorrentsTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('filename');
-			$table->string('save_as');
 			$table->bigInteger('size')->default(0);
 			$table->integer('hits')->unsigned()->default(0);
 			$table->integer('times_completed')->default(0);
-			$table->integer('sedders')->default(0);
+			$table->integer('seeders')->default(0);
 			$table->integer('leechers')->default(0);
 			$table->enum('visible', array('yes', 'no'))->default('yes')->index();
 			$table->timestamps();

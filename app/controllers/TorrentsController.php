@@ -2,6 +2,13 @@
 
 class TorrentsController extends \BaseController {
 
+	protected $torrent;
+
+	public function __construct(Torrent $torrent)
+	{
+		$this->torrent = $torrent;
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -9,7 +16,7 @@ class TorrentsController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('torrents.index');
 	}
 
 	/**
@@ -19,7 +26,7 @@ class TorrentsController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('torrents.create');
 	}
 
 	/**
@@ -29,7 +36,22 @@ class TorrentsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$torrent = new Torrent();
+
+		$torrent->name = Input::get('name');
+		$torrent->visible = 'yes';
+		if (Input::hasFile('torrent'))
+		{
+			$torrent->filename = Input::file('torrent')->getClientOriginalName();
+			$torrent->size = Input::file('torrent')->getSize();
+		}
+
+		if ( ! $torrent->save() )
+		{
+			return Redirect::back()->withInput()->withErrors($torrent->getErrors());
+		}
+
+		return Redirect::route('torrents.index');
 	}
 
 	/**

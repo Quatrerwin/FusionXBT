@@ -27,7 +27,7 @@ class BaseModel extends \Eloquent {
 	 * Validates current attributes against rules
 	 */
 	public function validate() {
-		$validator = Validator::make(
+		$validation = Validator::make(
 			$this->getAttributes(), 
 			static::$rules
 		);
