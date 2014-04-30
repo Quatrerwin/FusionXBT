@@ -16,7 +16,7 @@ class TorrentsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$torrents = Torrent::paginate(10);
+		$torrents = Torrent::where('visible', '=', 'yes')->paginate(10);
 
 		return View::make('torrents.index', ['torrents' => $torrents]);
 	}
@@ -75,7 +75,9 @@ class TorrentsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$torrent = Torrent::find($id);
+
+		return View::make('torrents.show', ['torrent' => $torrent]);
 	}
 
 	/**

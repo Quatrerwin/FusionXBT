@@ -1,13 +1,13 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
-	"keywords": ["framework", "laravel"],
-	"license": "MIT",
+	"name": "FusionXBT",
+	"description": "A Frontend for XBT.",
+	"license": "BSD-2-Clause",
 	"require": {
 		"laravel/framework": "4.1.*"
 	},
 	"require-dev": {
-		    "way/generators": "2.*"
+		    "way/generators": "2.*",
+			"way/guard-laravel": "dev-master",
 	},
 	"autoload": {
 		"classmap": [

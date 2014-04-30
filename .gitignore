@@ -2,9 +2,10 @@
 /vendor
 composer.phar
 composer.lock
-.env.local.php
+.env.*.php
 .env.php
 .DS_Store
+.sass-cache/*
 Thumbs.db
-.env.development.php
 /public/files/*
+/public/css/*

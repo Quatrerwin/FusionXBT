@@ -8,6 +8,7 @@ Installation
 ------------
 - This project uses Laravel. install dependencies with [Composer](https://getcomposer.org/).
 - The database needs to be set up. If using MySQL, create a file .env.php or .env.environment.php where environment is your working environment (e.g., development) in the root directory with contents
+- For the moment, you need Ruby or another way to compile SCSS (SASS) files down to CSS files.
 
 ```php
 <?php

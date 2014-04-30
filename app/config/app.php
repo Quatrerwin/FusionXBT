@@ -107,6 +107,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider', // Remove me in production!
+		'Way\Console\GuardLaravelServiceProvider', // Remove me in production!
 
 	),
 

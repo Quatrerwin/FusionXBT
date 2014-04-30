@@ -1,1 +1,5 @@
-/home/quatre/code/FusionXBT/app/views/torrents/show.blade.php
+@extends('layouts.application')
+
+@section('content')
+	<h1>{{ $torrent->name }}</h1>
+@stop

@@ -1,0 +1,68 @@
+.row-fluid {
+	width: 100%;
+	margin-bottom: 5px;
+
+	&:before, &:after {
+		clear:both;
+		content: "";
+		display: table;
+		line-height: 0;
+	}
+
+	[class*='span'] {
+		display: block;
+		float: left;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	.span1 {
+		width: 1/12 * 100%;
+	}
+
+	.span2 {
+		width: 2/12 * 100%;
+	}
+
+	.span3 {
+		width: 3/12 * 100%;
+	}
+
+	.span4 {
+		width: 4/12 * 100%;
+	}
+
+	.span5 {
+		width: 5/12 * 100%;
+	}
+
+	.span6 {
+		width: 6/12 * 100%;
+	}
+
+	.span7 {
+		width: 7/12 * 100%;
+	}
+
+	.span8 {
+		width: 8/12 * 100%;
+	}
+
+	.span9 {
+		width: 9/12 * 100%;
+	}
+
+	.span10 {
+		width: 10/12 * 100%;
+	}
+
+	.span11 {
+		width: 11/12 * 100%;
+	}
+
+	.span12 {
+		width: 12/12 * 100%;
+	}
+}
